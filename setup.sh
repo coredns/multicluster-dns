@@ -6,7 +6,7 @@ source functions.sh
 
 gcloud compute networks create $NETWORK --subnet-mode=custom
 gcloud compute firewall-rules create $NETWORK-internal --network $NETWORK --allow tcp,udp,icmp --source-ranges $MASTERAUTHNETWORKS
-#gcloud compute firewall-rules create $NETWORK-inbound --network $NETWORK --allow tcp:22 --source-ranges $WORKSTATIONCIDR
+#gcloud compute firewall-rules create $NETWORK-inbound --network $NETWORK --allow tcp:22
 
 gcloud compute networks subnets create k0-subnet --network $NETWORK --range 172.16.10.0/24 --secondary-range pods=10.0.0.0/16,services=10.128.0.0/16 --region=us-central1
 gcloud compute networks subnets create k1-subnet --network $NETWORK --range 172.16.11.0/24 --secondary-range pods=10.1.0.0/16,services=10.129.0.0/16 --region=us-central1

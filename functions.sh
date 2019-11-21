@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NETWORK=coredns-mcsd
+NETWORK=coredns-mcdns
 
 # Allow access to the masters from this CIDR, in addition to node and pod CIDR
 WORKSTATIONCIDR=
